@@ -3,3 +3,8 @@
 db.universitario.find({edad: {$lte:23}},{nombre:1,apellido:1,edad:1});
 /*Query 2*/
 db.universidad.find({provincia:"Lima"});
+/*Italo Clavijo*/
+/*Query 1*/
+db.universitario.find({$or: [{genero:"F"},{edad: {$lt: 25}},{_id:0,carrera:0,email:0,}]});
+/*Query 2*/
+db.universitario.find({$or: [{genero:"M"},{edad: {$lt: 20}},{carrera:"Ingeneria de Petroleo"},{_id:0,carrera:0,email:0,}]});

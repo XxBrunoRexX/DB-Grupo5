@@ -1,0 +1,5 @@
+/*Cristopher Rondon*/
+/*Query 1*/
+db.universitario.find({edad: {$lte:23}},{nombre:1,apellido:1,edad:1});
+/*Query 2*/
+db.universidad.find({provincia:"Lima"});

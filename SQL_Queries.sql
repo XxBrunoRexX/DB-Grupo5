@@ -17,3 +17,19 @@ BEGIN
   FROM Distrito D, Inmueble I
   WHERE I.distrito_id = @district_id AND D.id = @district_id
 END;
+
+/*Italo Clavijo*/
+/*Query 1*/
+CREATE PROCEDURE sp_propiedades_cantidad_de_area @area_input int as
+    BEGIN
+        SELECT nombre, COUNT (*)
+        FROM Inmueble Inmu
+        JOIN Arrendatario Arr on Inmu.arrendatario_id = Arr.id
+        WHERE area >= @area_input
+        GROUP BY nombre
+    END;
+/*Query 2*/
+SELECT universidad_id, COUNT (universidad_id) AS Total_Por_Universidad
+FROM Universitario
+GROUP BY universidad_id
+ORDER BY Total_Por_Universidad DESC
